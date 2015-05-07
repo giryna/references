@@ -1,9 +1,6 @@
 package patterns.builder;
 
-/**
- * Created by taras on 4/4/15.
- */
-public class BuilderTest {
+public class BuilderDemo {
     public static void main(String[] args) {
         Person newPerson = new Person.Builder()
                 .setName("Tom Nyskelo")
