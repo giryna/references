@@ -1,12 +1,13 @@
 package automation.cucumber_tests.steps;
 
+import static org.assertj.core.api.Assertions.*;
+
 import automation.cucumber_tests.DriverFactory;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-        import cucumber.api.java.en.When;
-        import org.openqa.selenium.By;
-        import org.openqa.selenium.Keys;
-        import org.testng.Assert;
+import cucumber.api.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 public class SharedSteps {
 
@@ -27,18 +28,20 @@ public class SharedSteps {
     }
 
     @Then("^I should see \"([^\"]*)\" element$")
-    public void i_should_see(String locator){
-        Assert.assertTrue(DriverFactory.getInstance().getDriver().findElement(By.xpath(locator)).isDisplayed());
+    public void i_should_see(String locator) {
+        assertThat(DriverFactory.getInstance().getDriver().findElement(By.xpath(locator)).isDisplayed())
+                .isTrue();
 //        Assert.assertTrue(Base.driver.findElement(By.xpath(locator)).isDisplayed());
 
     }
 
     @Then("^I enter \"([^\"]*)\" text into \"([^\"]*)\" element$")
-    public void i_enter_text(String text, String locator){
+    public void i_enter_text(String text, String locator) {
         DriverFactory.getInstance().getDriver().findElement(By.xpath(locator)).sendKeys(text);
         DriverFactory.getInstance().getDriver().findElement(By.xpath(locator)).sendKeys(Keys.ENTER);
 
-//        Base.driver.findElement(By.xpath(locator)).sendKeys(text + Keys.ENTER);
+//        Base.driver.findElement(By.xpath(locator)).sendKeys(text);
+//        Base.driver.findElement(By.xpath(locator)).sendKeys(Keys.ENTER);
     }
 
     //Given I wait x seconds
