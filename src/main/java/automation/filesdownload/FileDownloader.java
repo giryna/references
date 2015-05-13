@@ -1,4 +1,4 @@
-package filesdownload;
+package automation.filesdownload;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.http.HttpResponse;

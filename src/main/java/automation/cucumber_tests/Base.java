@@ -1,4 +1,4 @@
-package automation.cucumber;
+package automation.cucumber_tests;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;

@@ -1,4 +1,4 @@
-package automation.cucumber;
+package automation.cucumber_tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -15,7 +15,7 @@ public class DriverFactory {
     private final ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>() {
         @Override
         protected WebDriver initialValue() {
-            return new FirefoxDriver(); // can be replaced with other browser drivers
+            return new FirefoxDriver();
         }
     };
 
