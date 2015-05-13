@@ -5,10 +5,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class DriverFactory {
 
-    private DriverFactory() {
-        // disabled
-    }
-
     private static DriverFactory instance = new DriverFactory();
 
     // thread local driver object for webdriver
@@ -18,6 +14,10 @@ public class DriverFactory {
             return new FirefoxDriver();
         }
     };
+
+    private DriverFactory() {
+        // disabled
+    }
 
     // call this method to get the driver object and launch the browser
     public WebDriver getDriver() {

@@ -6,10 +6,10 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 // for JUnit use:
 // @RunWith(Cucumber.class)
 @CucumberOptions(
-        format={"pretty", "html:target/cucumber"},
-        features={"src/main/java/automation/cucumber_tests/features/"}
+        format = {"pretty", "html:target/cucumber"},
+        features = {"src/main/java/automation/cucumber_tests/features/yahoo-search.feature"}
 )
 
-public class RunCukeTest extends AbstractTestNGCucumberTests {
+public class RunYahooTest extends AbstractTestNGCucumberTests {
     // For running via TestNG
 }
