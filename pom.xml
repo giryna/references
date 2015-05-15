@@ -57,8 +57,8 @@
                             <forkCount>${surefire.forks.count}</forkCount>
                             <reuseForks>false</reuseForks>
                             <argLine>-Duser.language=en</argLine>
-                            <argLine>-Xmx1024m</argLine>
-                            <argLine>-XX:MaxPermSize=256m</argLine>
+                            <!--<argLine>-Xmx1024m</argLine>-->
+                            <!--<argLine>-XX:MaxPermSize=256m</argLine>-->
                             <argLine>-Dfile.encoding=UTF-8</argLine>
                             <useFile>false</useFile>
                             <includes>
