@@ -1,11 +1,12 @@
 package automation.cucumber_tests.steps;
 
-import static org.assertj.core.api.Assertions.*;
+//import static org.assertj.core.api.Assertions.*;
 
 import automation.cucumber_tests.DriverFactory;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import junit.framework.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
@@ -29,8 +30,9 @@ public class SharedSteps {
 
     @Then("^I should see \"([^\"]*)\" element$")
     public void i_should_see(String locator) {
-        assertThat(DriverFactory.getInstance().getDriver().findElement(By.xpath(locator)).isDisplayed())
-                .isTrue();
+//        assertThat(DriverFactory.getInstance().getDriver().findElement(By.xpath(locator)).isDisplayed())
+//                .isTrue();
+        Assert.assertTrue(DriverFactory.getInstance().getDriver().findElement(By.xpath(locator)).isDisplayed());
 //        Assert.assertTrue(Base.driver.findElement(By.xpath(locator)).isDisplayed());
 
     }

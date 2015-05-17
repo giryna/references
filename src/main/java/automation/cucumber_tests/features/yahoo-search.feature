@@ -1,4 +1,4 @@
-@sampling_admin @sampling
+@sampling_admin @search
 
 Feature: Some sample feature
   As a user I want to open some link

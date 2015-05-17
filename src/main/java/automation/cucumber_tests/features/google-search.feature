@@ -1,4 +1,4 @@
-@test_tag @test_tag2
+@test_tag @search
 
 Feature: Some sample feature
   As a user I want to open some link
