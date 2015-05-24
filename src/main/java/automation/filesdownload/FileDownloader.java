@@ -12,6 +12,7 @@ import org.apache.http.impl.cookie.BasicClientCookie;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.BasicHttpContext;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,6 +34,8 @@ public class FileDownloader {
 
     public FileDownloader(WebDriver driverObject) {
         this.driver = driverObject;
+        String log4jConfPath = "src/main/java/resources/log4j.properties";
+        PropertyConfigurator.configure(log4jConfPath);
     }
 
     /**

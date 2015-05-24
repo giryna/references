@@ -30,7 +30,7 @@ public class StreamsDemo {
         final List<Person> filtered =
                 persons
                         .stream()
-                        .filter(p -> p.name.startsWith("P"))
+                        .filter(person -> person.name.startsWith("P"))
                         .collect(Collectors.toList());
 
         System.out.println(filtered);    // [Peter, Pamela]
