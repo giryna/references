@@ -2,14 +2,12 @@ package patterns.stepbuilder;
 
 public class StepBuilderDemo {
     public static void main(String[] args) {
-        Pizza pizza = PizzaStepBuilder.newBuilder()
+        final Pizza pizza = PizzaStepBuilder.newBuilder()
                 .pizzaCalled("New Pizza")
-                .doughType("thin")
-                .meat("pork")
+                .addMeat("pork")
+                .addFish("salmon")
                 .withCheese("brie")
-                .addVegetable("onions")
-                .addVegetable("garlic")
-                .noVegetablesPlease()
+                .setSize("XXL")
                 .build();
 
         System.out.println(pizza);

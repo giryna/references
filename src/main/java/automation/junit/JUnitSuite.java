@@ -1,12 +1,12 @@
-package automation.cucumber_tests;
+package automation.junit;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-//        RunGoogleTest.class,
-//        RunYahooTest.class
+        JUnit1Test.class,
+        JUnit2Test.class
         })
 
 public class JUnitSuite {

@@ -1,15 +1,15 @@
 <suite name="Sample test suite" verbose="1" parallel="tests" thread-count="5">
-    <parameter name="seleniumHub" value="testmaster-hub.lab"/>
+    <!--<parameter name="seleniumHub" value="testmaster-hub.lab"/>-->
 
     <test name="Google" parallel="classes" thread-count="5" preserve-order="false">
         <classes>
-            <class name="automation.cucumber_tests.RunGoogleTest"/>
+            <class name="GoogleTest"/>
         </classes>
     </test>
 
     <test name="Yahoo" parallel="classes" thread-count="5" preserve-order="false">
         <classes>
-            <class name="automation.cucumber_tests.RunYahooTest"/>
+            <class name="YahooTest"/>
         </classes>
     </test>
 </suite>
