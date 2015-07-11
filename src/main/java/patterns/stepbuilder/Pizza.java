@@ -1,68 +1,62 @@
 package patterns.stepbuilder;
 
-import java.util.List;
-
 public class Pizza {
-
-    private final String name;
-    private String doughType;
-    private String fish;
-    private String cheese;
-    private String meat;
-    private List vegetables;
-
-    public Pizza(String name) {
-        this.name = name;
-    }
-
-    public String getDoughType() {
-        return doughType;
-    }
-
-    public void setDoughType(String doughType) {
-        this.doughType = doughType;
-    }
-
-    public String getFish() {
-        return fish;
-    }
-
-    public void setFish(String fish) {
-        this.fish = fish;
-    }
-
-    public String getCheese() {
-        return cheese;
-    }
-
-    public void setCheese(String cheese) {
-        this.cheese = cheese;
-    }
-
-    public String getMeat() {
-        return meat;
-    }
-
-    public void setMeat(String meat) {
-        this.meat = meat;
-    }
-
-    public List getVegetables() {
-        return vegetables;
-    }
-
-    public void setVegetables(List vegetables) {
-        this.vegetables = vegetables;
-    }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMeatType() {
+        return meatType;
+    }
+
+    public void setMeatType(String meatType) {
+        this.meatType = meatType;
+    }
+
+    public String getFishType() {
+        return fishType;
+    }
+
+    public void setFishType(String fishType) {
+        this.fishType = fishType;
+    }
+
+    public String getCheeseType() {
+        return cheeseType;
+    }
+
+    public void setCheeseType(String cheeseType) {
+        this.cheeseType = cheeseType;
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
+
+    private String name;
+    private String meatType;
+    private String fishType;
+    private String cheeseType;
+    private String size;
+
+
     @Override
     public String toString() {
-        return "Pizza [name=" + name + ", doughType=" + doughType + ", fish="
-                + fish + ", cheese=" + cheese + ", meat=" + meat
-                + ", vegetables=" + vegetables + "]";
+        return "Pizza{" +
+                "name='" + name + '\'' +
+                ", meatType='" + meatType + '\'' +
+                ", fishType='" + fishType + '\'' +
+                ", cheeseType='" + cheeseType + '\'' +
+                ", size='" + size + '\'' +
+                '}';
     }
 }

@@ -1,8 +1,5 @@
 package patterns.stepbuilder;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class PizzaStepBuilder {
 
     private PizzaStepBuilder() {
@@ -14,31 +11,25 @@ public class PizzaStepBuilder {
     }
 
     public interface FirstNameStep {
-        DoughType pizzaCalled(String name);
+        MeatStep pizzaCalled(String name);
     }
 
-    public interface DoughType {
-        MainFillingStep doughType(String doughType);
+    public interface MeatStep {
+        FishStep addMeat(String meatType);
     }
 
-    public interface MainFillingStep {
-        CheeseStep meat(String meat);
-
-        VegetableStep fish(String olives);
+    public interface FishStep {
+        CheeseStep addFish(String fishType);
     }
 
     public interface CheeseStep {
-        VegetableStep noCheesePlease();
+        SizeStep noCheesePlease();
 
-        VegetableStep withCheese(String cheese);
+        SizeStep withCheese(String cheeseType);
     }
 
-    public interface VegetableStep {
-        BuildStep noMoreVegetablesPlease();
-
-        BuildStep noVegetablesPlease();
-
-        VegetableStep addVegetable(String vegetable);
+    public interface SizeStep {
+        BuildStep setSize(String size);
     }
 
 
@@ -46,73 +37,55 @@ public class PizzaStepBuilder {
         Pizza build();
     }
 
-    private static class Steps implements FirstNameStep, DoughType, MainFillingStep, CheeseStep, VegetableStep, BuildStep {
+    private static class Steps implements FirstNameStep, MeatStep, FishStep, CheeseStep, SizeStep, BuildStep {
 
         private String name;
-        private String doughType;
-        private String meat;
-        private String fish;
-        private String cheese;
-        private final List<String> vegetables = new ArrayList<>();
+        private String meatType;
+        private String size;
+        private String fishType;
+        private String cheeseType;
 
-        public DoughType pizzaCalled(String name) {
+        public MeatStep pizzaCalled(String name) {
             this.name = name;
             return this;
         }
 
-        public MainFillingStep doughType(String doughType) {
-            this.doughType = doughType;
+        public FishStep addMeat(String meatType) {
+            this.meatType = meatType;
             return this;
         }
 
-        public CheeseStep meat(String meat) {
-            this.meat = meat;
+        public CheeseStep addFish(String fishType) {
+            this.fishType = fishType;
             return this;
         }
 
-        public VegetableStep fish(String fish) {
-            this.fish = fish;
+        public SizeStep noCheesePlease() {
             return this;
         }
 
-        public BuildStep noMoreVegetablesPlease() {
-            return this;
-        }
-
-        public BuildStep noVegetablesPlease() {
-            return this;
-        }
-
-        public VegetableStep addVegetable(String vegetable) {
-            this.vegetables.add(vegetable);
-            return this;
-        }
-
-        public VegetableStep noCheesePlease() {
-            return this;
-        }
-
-        public VegetableStep withCheese(String cheese) {
-            this.cheese = cheese;
+        public SizeStep withCheese(String cheese) {
+            this.cheeseType = cheese;
             return this;
         }
 
         public Pizza build() {
-            final Pizza pizza = new Pizza(name);
-            pizza.setDoughType(doughType);
+            final Pizza pizza = new Pizza();
 
-            if (fish != null) {
-                pizza.setFish(fish);
-            } else {
-                pizza.setMeat(meat);
-            }
-            if (cheese != null) {
-                pizza.setCheese(cheese);
-            }
-            if (!vegetables.isEmpty()) {
-                pizza.setVegetables(vegetables);
-            }
+            pizza.setName(name);
+            pizza.setMeatType(meatType);
+            pizza.setFishType(fishType);
+            pizza.setCheeseType(cheeseType);
+            pizza.setSize(size);
+
             return pizza;
+        }
+
+        @Override
+        public BuildStep setSize(String size) {
+            this.size = size;
+
+            return this;
         }
     }
 }
