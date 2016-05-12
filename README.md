@@ -7,3 +7,5 @@ Hi chiks!
 
 My second chenges
 This is a sentence by Taras!
+
+Kostya's new changes
