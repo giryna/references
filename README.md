@@ -7,3 +7,4 @@ Hi chiks!
 
 My second chenges
 This is a sentence by Taras!
+Dimaon says something!
