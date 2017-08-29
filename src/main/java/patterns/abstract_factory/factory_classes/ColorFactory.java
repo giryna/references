@@ -7,6 +7,7 @@ import patterns.abstract_factory.colors.Green;
 import patterns.abstract_factory.colors.Red;
 
 public class ColorFactory extends AbstractFactory {
+
     @Override
     public Color getColor(String color) {
         switch(color.toLowerCase()){
