@@ -2,6 +2,12 @@ package patterns.stepbuilder;
 
 public class Pizza {
 
+    private String name;
+    private String meatType;
+    private String fishType;
+    private String cheeseType;
+    private String size;
+
     public String getName() {
         return name;
     }
@@ -41,13 +47,6 @@ public class Pizza {
     public void setSize(String size) {
         this.size = size;
     }
-
-    private String name;
-    private String meatType;
-    private String fishType;
-    private String cheeseType;
-    private String size;
-
 
     @Override
     public String toString() {

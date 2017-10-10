@@ -7,7 +7,7 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         JUnit1Test.class,
         JUnit2Test.class
-        })
+})
 
 public class JUnitSuite {
     //Do Nothing.

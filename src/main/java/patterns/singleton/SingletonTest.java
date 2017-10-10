@@ -8,12 +8,15 @@ import java.util.logging.Logger;
 public class SingletonTest extends TestCase {
     private static Logger logger = Logger.getAnonymousLogger();
     private static Singleton singleton = null;
+
     public SingletonTest(String name) {
         super(name);
     }
+
     public void setUp() {
         singleton = null;
     }
+
     public void testUnique() throws InterruptedException {
         // Both threads call Singleton.getInstance().
         Thread threadOne = new Thread(new SingletonTestRunnable()),
@@ -23,6 +26,7 @@ public class SingletonTest extends TestCase {
         threadOne.join();
         threadTwo.join();
     }
+
     private static class SingletonTestRunnable implements Runnable {
         public void run() {
             // Get a reference to the singleton.
@@ -30,8 +34,8 @@ public class SingletonTest extends TestCase {
 
             // Protect singleton member variable from
             // multithreaded access.
-            synchronized(SingletonTest.class) {
-                if(singleton == null) // If local reference is null...
+            synchronized (SingletonTest.class) {
+                if (singleton == null) // If local reference is null...
                     singleton = s;     // ...set it to the singleton
             }
 

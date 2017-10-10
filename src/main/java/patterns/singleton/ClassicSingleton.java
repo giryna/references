@@ -12,7 +12,7 @@ public class ClassicSingleton {
     }
 
     public static synchronized ClassicSingleton getInstance() {
-        if(singleton == null) {
+        if (singleton == null) {
             simulateRandomActivity();
             singleton = new ClassicSingleton();
         }
@@ -22,15 +22,14 @@ public class ClassicSingleton {
 
     private static void simulateRandomActivity() {
         try {
-            if(firstThread) {
+            if (firstThread) {
                 firstThread = false;
                 logger.info("sleeping...");
                 // This nap should give the second thread enough time
                 // to get by the first thread.
                 Thread.currentThread().sleep(50);
             }
-        }
-        catch(InterruptedException ex) {
+        } catch (InterruptedException ex) {
             logger.warning("Sleep interrupted");
         }
     }

@@ -1,7 +1,7 @@
 target/*
 .idea/*
-saladhands.iml
+*.iml
 .DS_Store
 logs/
 src/test/resources/csv/exported_csv/
-test-output-cucumber/
+test-output/

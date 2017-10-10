@@ -1,17 +1,15 @@
-package automation.pagefactory.pageobjects;
+package automation.html_elements.pageobjects;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import ru.yandex.qatools.htmlelements.element.Image;
 
 public class SearchResultsPage extends PageObjectPage {
     @FindBy(xpath = ".//*[@id='logocont']//a")
-    private WebElement googleLogo;
+    private Image googleLogo;
 
     public SearchResultsPage(WebDriver driver) {
         super(driver);
-        PageFactory.initElements(driver, this);
     }
 
     public HomePage clickGoogleLogo() {

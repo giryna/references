@@ -9,7 +9,7 @@ import patterns.abstract_factory.shapes.Square;
 public class ShapeFactory extends AbstractFactory {
     @Override
     public Shape getShape(String shape) {
-        switch (shape.toLowerCase()){
+        switch (shape.toLowerCase()) {
             case "circle":
                 return new Circle();
             case "rectangle":

@@ -1,7 +1,8 @@
 package automation.cucumber_tests;
 
 import org.apache.commons.io.FileUtils;
-import java.io.*;
+
+import java.io.File;
 import java.util.Collection;
 import java.util.UUID;
 
@@ -19,6 +20,7 @@ public class ReportMerger {
 
     /**
      * Merge all reports together into master report in given reportDirectory
+     *
      * @param reportDirectory
      * @throws Exception
      */

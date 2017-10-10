@@ -34,7 +34,7 @@ public class FileDownloaderTest {
     }
 
     @AfterMethod
-    public void after(){
+    public void after() {
         driver.close();
     }
 }

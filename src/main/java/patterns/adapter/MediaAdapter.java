@@ -8,8 +8,8 @@ import patterns.adapter.players.VlcPlayer;
 public class MediaAdapter implements MediaPlayer {
     private AdvancedMediaPLayer advancedMediaPLayer;
 
-    public MediaAdapter(String audioType){
-        switch (audioType.toLowerCase()){
+    public MediaAdapter(String audioType) {
+        switch (audioType.toLowerCase()) {
             case "vlc":
                 advancedMediaPLayer = new VlcPlayer();
                 break;
@@ -23,7 +23,7 @@ public class MediaAdapter implements MediaPlayer {
 
     @Override
     public void play(String audioType, String fileName) {
-        switch (audioType.toLowerCase()){
+        switch (audioType.toLowerCase()) {
             case "vlc":
                 advancedMediaPLayer.playVlc(fileName);
                 break;

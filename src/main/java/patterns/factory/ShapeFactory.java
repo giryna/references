@@ -5,7 +5,16 @@ package patterns.factory;
  */
 public class ShapeFactory {
 
-    public Shape getShape(String shapeString){
+    public static void main(String args[]) {
+
+        ShapeFactory shapeFactory = new ShapeFactory();
+        Shape shape = shapeFactory.getShape("circle");
+
+        shape.draw();
+
+    }
+
+    public Shape getShape(String shapeString) {
 
         // switch statement on strings enabled in java 7 only
         if (shapeString.equals("circle")) {
@@ -17,14 +26,5 @@ public class ShapeFactory {
         } else {
             throw new IllegalArgumentException();
         }
-    }
-
-    public static void main(String args[]){
-
-        ShapeFactory shapeFactory = new ShapeFactory();
-        Shape shape = shapeFactory.getShape("circle");
-
-        shape.draw();
-
     }
 }

@@ -1,7 +1,6 @@
 package patterns.factory;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 /**
  * Created by toleksyn on 9/7/2016.

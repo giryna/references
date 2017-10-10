@@ -166,6 +166,11 @@
             <artifactId>cucumber-jvm-deps</artifactId>
             <version>1.0.3</version>
         </dependency>
+        <dependency>
+            <groupId>ru.yandex.qatools.htmlelements</groupId>
+            <artifactId>htmlelements-java</artifactId>
+            <version>1.18</version>
+        </dependency>
 
     </dependencies>
 

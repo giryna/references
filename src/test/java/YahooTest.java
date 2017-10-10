@@ -5,6 +5,6 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/main/java/automation/cucumber_tests/features/yahoo-search.feature", /*tags = {"@search"},*/ format = {"html:target/cucumber-report/yahoo"})
-public class YahooTest /*extends AbstractTestNGCucumberTests */{
+public class YahooTest /*extends AbstractTestNGCucumberTests */ {
 
 }

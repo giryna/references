@@ -5,7 +5,7 @@ import java.util.List;
 
 public class LambdasDemo {
     public static void main(String[] args) {
-        final List<String> list = new ArrayList<String>(){{
+        final List<String> list = new ArrayList<String>() {{
             add("str1");
             add("str2");
             add("str3");

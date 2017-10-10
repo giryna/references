@@ -5,9 +5,9 @@ import patterns.business_delegate.services.EJBService;
 import patterns.business_delegate.services.JMSService;
 
 public class BusinessLookUp {
-    public BusinessService getBusinessService(String serviceType){
+    public BusinessService getBusinessService(String serviceType) {
 
-        switch (serviceType.toUpperCase()){
+        switch (serviceType.toUpperCase()) {
             case "EJB":
                 return new EJBService();
             default:

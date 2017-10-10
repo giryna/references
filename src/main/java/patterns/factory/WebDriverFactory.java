@@ -6,11 +6,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverFactory {
 
-    public WebDriver getWebDriver(final Browsers browsers){
+    public WebDriver getWebDriver(final Browsers browsers) {
 
         WebDriver webDriver;
 
-        switch (browsers){
+        switch (browsers) {
             case FIREFOX:
                 webDriver = new FirefoxDriver();
                 break;

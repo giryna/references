@@ -8,7 +8,7 @@ public class BuilderDemo {
                 .setEmail("tom@mail")
                 .setMaritalStatus("married")
                 .setOccupation("IT")
-        .build();
+                .build();
 
         System.out.println(newPerson);
     }

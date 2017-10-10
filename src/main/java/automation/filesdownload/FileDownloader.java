@@ -16,6 +16,7 @@ import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -26,7 +27,7 @@ public class FileDownloader {
 
     private static final Logger LOG = Logger.getLogger(FileDownloader.class);
     private WebDriver driver;
-//    private String localDownloadPath = System.getProperty("java.io.tmpdir");
+    //    private String localDownloadPath = System.getProperty("java.io.tmpdir");
     private String localDownloadPath = System.getProperty("user.dir");
     private boolean followRedirects = true;
     private boolean mimicWebDriverCookieState = true;
@@ -116,12 +117,12 @@ public class FileDownloader {
     private BasicCookieStore mimicCookieState(Set seleniumCookieSet) {
         BasicCookieStore mimicWebDriverCookieStore = new BasicCookieStore();
         for (Object seleniumCookie : seleniumCookieSet) {
-            final BasicClientCookie duplicateCookie = new BasicClientCookie(((Cookie)seleniumCookie).getName(),
-                    ((Cookie)seleniumCookie).getValue());
-            duplicateCookie.setDomain(((Cookie)seleniumCookie).getDomain());
-            duplicateCookie.setSecure(((Cookie)seleniumCookie).isSecure());
-            duplicateCookie.setExpiryDate(((Cookie)seleniumCookie).getExpiry());
-            duplicateCookie.setPath(((Cookie)seleniumCookie).getPath());
+            final BasicClientCookie duplicateCookie = new BasicClientCookie(((Cookie) seleniumCookie).getName(),
+                    ((Cookie) seleniumCookie).getValue());
+            duplicateCookie.setDomain(((Cookie) seleniumCookie).getDomain());
+            duplicateCookie.setSecure(((Cookie) seleniumCookie).isSecure());
+            duplicateCookie.setExpiryDate(((Cookie) seleniumCookie).getExpiry());
+            duplicateCookie.setPath(((Cookie) seleniumCookie).getPath());
 
             mimicWebDriverCookieStore.addCookie(duplicateCookie);
         }
@@ -141,7 +142,7 @@ public class FileDownloader {
     private String downloader(WebElement element, String attribute) throws IOException, NullPointerException, URISyntaxException {
         final String fileToDownloadLocation = element.getAttribute(attribute);
 
-        if (fileToDownloadLocation.trim().equals("")){
+        if (fileToDownloadLocation.trim().equals("")) {
             throw new NullPointerException("The element you have specified does not link to anything!");
         }
 

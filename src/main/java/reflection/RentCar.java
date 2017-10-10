@@ -2,9 +2,9 @@ package reflection;
 
 public class RentCar {
 
+    public int price;
     private int rate;
     private String type;
-    public int price;
 
     public RentCar(int length) {
         if (length < 455) {
@@ -23,12 +23,12 @@ public class RentCar {
         return rate;
     }
 
-    public String getType() {
-        return type;
-    }
-
     public void setRate(int rate) {
         this.rate = rate;
+    }
+
+    public String getType() {
+        return type;
     }
 
     public void setType(String type) {

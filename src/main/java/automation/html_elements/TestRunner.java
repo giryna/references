@@ -1,4 +1,4 @@
-package automation.pagefactory;
+package automation.html_elements;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

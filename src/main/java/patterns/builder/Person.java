@@ -11,7 +11,7 @@ public class Person {
     private String maritalStatus;
     private String occupation;
 
-    Person(Builder personBuilder){
+    Person(Builder personBuilder) {
         this.name = personBuilder.name;
         this.age = personBuilder.age;
         this.email = personBuilder.email;
@@ -39,7 +39,18 @@ public class Person {
         return occupation;
     }
 
+    @Override
+    public String toString() {
+        return this.name + " " + this.email + " " + this.age + " " + this.maritalStatus + " " + this.occupation;
+    }
+
     public static class Builder {
+        private String name;
+        private int age;
+        private String email;
+        private String maritalStatus;
+        private String occupation;
+
         public Builder setName(String name) {
             this.name = name;
             return this;
@@ -65,19 +76,8 @@ public class Person {
             return this;
         }
 
-        private String name;
-        private int age;
-        private String email;
-        private String maritalStatus;
-        private String occupation;
-
-        Person build(){
+        Person build() {
             return new Person(this);
         }
-    }
-
-    @Override
-    public String toString(){
-        return this.name + " " + this.email + " " + this.age + " " + this.maritalStatus + " " + this.occupation;
     }
 }

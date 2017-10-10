@@ -1,4 +1,5 @@
 package automation.filesdownload;
+
 import org.apache.http.client.methods.*;
 
 public enum RequestMethod {

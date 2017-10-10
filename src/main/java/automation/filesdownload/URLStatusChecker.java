@@ -1,6 +1,7 @@
 package automation.filesdownload;
 
 import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.params.ClientPNames;
 import org.apache.http.client.protocol.ClientContext;
@@ -13,7 +14,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
-import org.apache.http.client.HttpClient;
+
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -134,11 +135,11 @@ public class URLStatusChecker {
     private BasicCookieStore mimicCookieState(Set seleniumCookieSet) {
         BasicCookieStore mimicWebDriverCookieStore = new BasicCookieStore();
         for (Object seleniumCookie : seleniumCookieSet) {
-            BasicClientCookie duplicateCookie = new BasicClientCookie(((Cookie)seleniumCookie).getName(), ((Cookie)seleniumCookie).getValue());
-            duplicateCookie.setDomain(((Cookie)seleniumCookie).getDomain());
-            duplicateCookie.setSecure(((Cookie)seleniumCookie).isSecure());
-            duplicateCookie.setExpiryDate(((Cookie)seleniumCookie).getExpiry());
-            duplicateCookie.setPath(((Cookie)seleniumCookie).getPath());
+            BasicClientCookie duplicateCookie = new BasicClientCookie(((Cookie) seleniumCookie).getName(), ((Cookie) seleniumCookie).getValue());
+            duplicateCookie.setDomain(((Cookie) seleniumCookie).getDomain());
+            duplicateCookie.setSecure(((Cookie) seleniumCookie).isSecure());
+            duplicateCookie.setExpiryDate(((Cookie) seleniumCookie).getExpiry());
+            duplicateCookie.setPath(((Cookie) seleniumCookie).getPath());
             mimicWebDriverCookieStore.addCookie(duplicateCookie);
         }
 

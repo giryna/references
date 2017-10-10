@@ -2,6 +2,12 @@ package java8.predicates;
 
 public class Employee {
 
+    private Integer id;
+    private Integer age;
+    private String gender;
+    private String firstName;
+    private String lastName;
+
     public Employee(Integer id, Integer age, String gender, String fName, String lName) {
         this.id = id;
         this.age = age;
@@ -49,12 +55,6 @@ public class Employee {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-
-    private Integer id;
-    private Integer age;
-    private String gender;
-    private String firstName;
-    private String lastName;
 
     @Override
     public String toString() {

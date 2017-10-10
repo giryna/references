@@ -9,7 +9,7 @@ public class SimplePredicateDemo {
     public static void main(String[] args) {
         final List<Integer> list = new ArrayList<>();
 
-        for(int i = 0; i <= 10; i++){
+        for (int i = 0; i <= 10; i++) {
             list.add(new Random().nextInt(10));
         }
 
@@ -23,11 +23,11 @@ public class SimplePredicateDemo {
     }
 
     // using predicate as precondition for some action
-    public static int sumItems(List<Integer> list, Predicate<Integer> predicate){
+    public static int sumItems(List<Integer> list, Predicate<Integer> predicate) {
         int sum = 0;
 
-        for(int listItem : list){
-            if(predicate.test(listItem)){
+        for (int listItem : list) {
+            if (predicate.test(listItem)) {
                 sum += listItem;
             }
         }

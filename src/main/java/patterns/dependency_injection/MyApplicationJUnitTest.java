@@ -11,7 +11,7 @@ public class MyApplicationJUnitTest {
     private MessageServiceInjector injector;
 
     @Before
-    public void setUp(){
+    public void setUp() {
         //mock the injector
         injector = () -> new Application(
                 (String msg, String rec) -> System.out.println("Mock Message Service implementation")
@@ -25,7 +25,7 @@ public class MyApplicationJUnitTest {
     }
 
     @After
-    public void tear(){
+    public void tear() {
         injector = null;
     }
 }

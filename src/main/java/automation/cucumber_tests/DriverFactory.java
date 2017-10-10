@@ -19,17 +19,17 @@ public class DriverFactory {
         // disabled
     }
 
+    public static DriverFactory getInstance() {
+        return instance;
+    }
+
     // call this method to get the driver object and launch the browser
     public WebDriver getDriver() {
         return driver.get();
     }
 
-    public static DriverFactory getInstance() {
-        return instance;
-    }
-
     // Quits the driver and closes the browser
-    public void removeDriver(){
+    public void removeDriver() {
         driver.get().quit();
         driver.remove();
     }

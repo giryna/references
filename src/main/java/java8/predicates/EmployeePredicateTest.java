@@ -3,6 +3,7 @@ package java8.predicates;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import static java8.predicates.EmployeePredicates.*;
 
 public class EmployeePredicateTest {
