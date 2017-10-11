@@ -1,18 +1,15 @@
 package qmo.streams;
 
-import org.testng.annotations.Test;
+import qmo.streams.models.product.Product;
+import qmo.streams.models.product.ProductType;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class StreamsClass {
 
-
     public static void main(String[] args) {
-//        List l = ShopMainPage.getProductsFor(ProductType.UNRELEASED);
-//        System.out.println(t);
-
+        List<Product> list = StreamsDemo.getProductsFor8(ProductType.UNRELEASED);
+        System.out.println(list);
     }
 
 }

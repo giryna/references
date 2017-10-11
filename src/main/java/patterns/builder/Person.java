@@ -11,7 +11,7 @@ public class Person {
     private String maritalStatus;
     private String occupation;
 
-    Person(Builder personBuilder) {
+    public Person(Builder personBuilder) {
         this.name = personBuilder.name;
         this.age = personBuilder.age;
         this.email = personBuilder.email;
