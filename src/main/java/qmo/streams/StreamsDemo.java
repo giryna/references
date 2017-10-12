@@ -16,18 +16,18 @@ public class StreamsDemo {
     private static By productsLocator = By.id("productID");
     private static By checkbox = By.id("productID");
 
-    public static List<Product> getProductsFor(ProductType productType) {
-        List<WebElement> products = getVisibleElements(productsLocator);
+    public static List<Product> getFilteredProductsFor(ProductType productType) {
 
-        List<String> productNames = new ArrayList<>();
-        for (WebElement product : products) {
-            productNames.add(product.getText());
-        }
-
+        List<WebElement> products = getVisibleElementsFor(productsLocator);
         List<Product> filteredProducts = new ArrayList<>();
-        for (String string : productNames) {
-            if (string.equals(productType.toString())) {
-                filteredProducts.add(new Product(string));
+
+        for (WebElement productElement : products) {
+             String productName = productElement.getText();
+             String productTypeString = getTypeFrom(productName);
+
+            if (productTypeString.equals(productType.toString())) {
+                Product product = new Product(productName);
+                filteredProducts.add(product);
             }
         }
 
@@ -35,16 +35,20 @@ public class StreamsDemo {
     }
 
     public static List<Product> getProductsFor8(ProductType productType) {
-        return getVisibleElements(productsLocator)
+        return getVisibleElementsFor(productsLocator)
                 .stream()
                 .map(WebElement::getText)
+                .filter(productName -> getTypeFrom(productName).equals(productType.toString()))
                 .map(Product::new)
-                .filter(product -> productType.equals(product.getProductType()))
                 .collect(toList());
     }
 
+    private static String getTypeFrom(String productName) {
+        return "";
+    }
+
     public static List<String> getCheckedCheckboxLabels() {
-        List<WebElement> checkboxes = getVisibleElements(checkbox);
+        List<WebElement> checkboxes = getVisibleElementsFor(checkbox);
 
         List<String> checkboxLabels = new ArrayList<>();
         for (WebElement checkbox : checkboxes) {
@@ -57,14 +61,14 @@ public class StreamsDemo {
     }
 
     public static List<String> getCheckedCheckboxLabels8() {
-        return getVisibleElements(checkbox)
+        return getVisibleElementsFor(checkbox)
                 .stream()
                 .filter(WebElement::isSelected)
                 .map(WebElement::getText)
                 .collect(toList());
     }
 
-    private static List<WebElement> getVisibleElements(By locator) {
+    private static List<WebElement> getVisibleElementsFor(By locator) {
         return new FirefoxDriver().findElements(locator);
     }
 }
